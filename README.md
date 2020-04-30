@@ -1,6 +1,6 @@
 Measure Theory 
 
-These lectures are mainly based on the books Introduction to measure and integration by S. Taylor published by Cambridge University Press.
+These lectures are mainly based on the book Introduction to measure and integration by S. Taylor published by Cambridge University Press.
 
 I am responsible for all faults in this document, mathematical or otherwise; any merits of the material here should be credited to the lecturer, not to me.
 
