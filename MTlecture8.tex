@@ -1,0 +1,150 @@
+\classheader{Lecture 8}
+\setcounter{lecture}{8}
+\begin{center}
+	\Large \bf Complete Measures
+\end{center}
+\vspace{0.25cm}
+
+\begin{definition}
+	$ \mathcal{F} \subseteq \mathcal{P}(\Omega) $ is $ \sigma $-algebra, $ \mu: \mathcal{F} \to \mathbb{R}_{+} \bigcup{\infty} $ is  additive. $ (\mu, \mathcal{F}) $ is complete if :
+	$ A \in \mathcal{F} $ such that $ \mu(A) = 0 $, $ \forall E \subseteq A $ then $ E \in \mathcal{F}. $
+	\label{def8.1}
+\end{definition}
+
+\begin{remark}
+	In Def \ref{def8.1}, by monotone $\mu \left( E \right) = 0$.
+	\label{rmk8.1}
+\end{remark}
+
+Next, our goal is: $\overline {\mathcal{F}}  \supseteq \mathcal{F}$, and $\overline \mu  :\overline {\mathcal{F}}  \to {{\mathbb{R}}_ + } \cup \left\{ { + \infty } \right\}$: $ \left\{ {\begin{matrix}
+	{\overline \mu  {|_{\mathcal{F}}} = \mu }, \qquad \qquad \qquad   \\ 
+	{\left( {\overline \mu  ,\overline {\mathcal{F}} } \right)\;is\;complete}  \\ 
+	
+	\end{matrix} } \right. $
+
+\begin{definition}
+	$\overline {\mathcal{F}}  = \left\{ {A \cup N,\;where\;A \in {\mathcal{F}}\;and\;N \subseteq E \in {\mathcal{F}},\;such\;that\;\mu \left( E \right) = 0} \right\}$
+	\label{def8.2}
+\end{definition}
+
+\begin{claim}
+	$ \overline {\mathcal{F}} $ is a $ \sigma $-algebra.
+	\label{cla8.1}
+\end{claim}
+ 
+ \begin{proof}
+ 	We will check :
+ 	\begin{enumerate}
+ 		\item $ \Omega \in \overline {\mathcal{F}} $,  $\because \Omega  = \Omega  \cup \emptyset ,\emptyset  \subseteq \emptyset  \in \mathcal{F}$
+ 		\item $ A \in \overline {\mathcal{F}} \Rightarrow A^{c} \in \overline {\mathcal{F}} $
+ 		
+ 		$\because A \subseteq \overline {\mathcal{F}} ,A = E \cup N\;where\;E \in \mathcal{F},\;N \subseteq H \in \mathcal{F}\;such\;that\;\mu \left( H \right) = 0$
+ 		\begin{equation}
+ 		\begin{split}
+ 		{A^c} & = {\left( {E \cup N} \right)^c}\\
+ 		      & = \underbrace {\left[ {{{\left( {E \cup N} \right)}^c} \cap H} \right]}_{ \subseteq H} \cup \underbrace {\left[ {{{\left( {E \cup N} \right)}^c} \cap {H^c}} \right]}_{\underbrace {{E^c} \cap {N^c} \cap {H^c}}_{ \subseteq {E^c} \cap {H^c} \in \mathcal{F}}}
+ 		\end{split}
+ 		\label{eq8.1}
+ 		\end{equation}
+ 		by Def \ref{def8.2}, $ A^{c} \in \overline {\mathcal{F}}. $
+ 		\item ${A_j} = {E_j} \cup {H_j}\;\;where\;\;{E_j} \in \mathcal{F},{H_j} \subseteq {W_j}\;where\;{w_j} \in \mathcal{F},\mu \left( {{W_j}} \right) = 0$ then $\bigcup\limits_{j \geqslant 1} {{A_j}}  \in \overline {\mathcal{F}} $
+ 		
+ 		\begin{equation}
+ 		\begin{split}
+ 		\because \bigcup\limits_{j \geqslant 1} {{A_j}}  & = \bigcup\limits_{j \geqslant 1} {\left( {{E_j} \cup {H_j}} \right)} \\
+ 												& = \underbrace {\bigcup\limits_{j \geqslant 1} {{E_j}} }_{\mathcal{F}} \cup \underbrace {\bigcup\limits_{j \geqslant 1} {{H_j}} }_{ \subseteq \bigcup\limits_{j \geqslant 1} {{W_j}}  \triangleq W}
+ 		\end{split}
+ 		\label{eq8.2}
+ 		\end{equation}
+ 		and $\mu \left( W \right) = \mu \left( {\bigcup\limits_{j \geqslant 1} {{W_j}} } \right) \leqslant \sum\limits_{j \geqslant 1} {\mu \left( {{W_j}} \right)}  = 0$
+ 	\end{enumerate}
+ \end{proof}
+
+We want to define $\overline \mu  \;\;on\;\;\overline {\mathcal{F}}: $
+\begin{equation}
+\because \;\;\;\underbrace {\overline \mu  \left( {A \cup N} \right)}_{ \geqslant \overline \mu  \left( A \right) = \mu \left( A \right)} \leqslant \overline \mu  \left( {A \cup E} \right) \leqslant \underbrace {\overline \mu  \left( A \right) + \overline \mu  \left( E \right)}_{ = \mu \left( A \right) + \mu \left( E \right) = \mu \left( A \right)}
+\label{eq8.3}
+\end{equation}
+
+So we give the following definition.
+
+\begin{definition}
+	$\overline \mu  \left( {A \cup N} \right) = \mu \left( A \right)$
+	\label{def8.3}
+\end{definition}
+
+\begin{proof}
+	By the Def \ref{def8.3}
+	\begin{enumerate}
+		\item check $\overline \mu$ is well defined
+		
+		Assume that $A \cup N = B \cup M,\;where\;A,B \in \mathcal{F},N \subseteq E \in \mathcal{F}\;where\;\mu \left( E \right) = 0,\;M \subseteq F \in \mathcal{F}\;where\;\mu \left( F \right) = 0$. We need to show that $\mu \left( A \right) = \mu \left( B \right)$.
+		\begin{equation}
+		\because A \subseteq A \cup N = B \cup M \subseteq B \cup M
+		\label{eq8.4}
+		\end{equation}
+		by $ \mu $ is $ \sigma- $additive, then $ \mu $ is monotone,
+		\begin{equation}
+		\mu \left( A \right) \leqslant \mu \left( {B \cup F} \right) \leqslant \mu \left( B \right) + \mu \left( F \right) = \mu \left( B \right)
+		\label{eq8.5}
+		\end{equation}
+		similarly, $\mu \left( B \right) \leqslant \mu \left( A \right)$.
+		\item check $\overline \mu  {|_{\mathcal{F}}} = \mu $
+		
+		by $ A \in \mathcal{F} $, $ A = A \bigcup \emptyset $ then $\overline \mu  \left( {A \cup \emptyset } \right) = \mu \left( A \right)$
+		\item check $\overline \mu  $ is $ \sigma- $additive i.e. ${A_j} \in \overline {\mathcal{F}} ,\;A = \sum\limits_{j \geqslant 1} {{A_j}} \Rightarrow \overline \mu  \left( A \right) = \sum\limits_{j \geqslant 1} {\mu \left( {{A_j}} \right)} $
+		
+		\begin{equation}
+		\because {A_j} \in \overline {\mathcal{F}} ,\therefore {A_j} = {E_j} \cup {N_j}\;where\;{E_j} \in \mathcal{F},\;{N_j} \subseteq {H_j} \subseteq \mathcal{F}\;where\;\mu \left( {{H_j}} \right) = 0
+		\label{eq8.6}
+		\end{equation}
+		$ \therefore A = \sum\limits_{j \geqslant 1} {{A_j}}  = \sum\limits_{j \geqslant 1} {{E_j}}  \cup \sum\limits_{j \geqslant 1} {{N_j}} $
+		\begin{equation}
+		\therefore \overline \mu  \left( A \right) = \mu \left( {\sum\limits_{j \geqslant 1} {{E_j}} } \right) = \sum\limits_{j \geqslant 1} {\mu \left( {{E_j}} \right)}  = \sum\limits_{j \geqslant 1} {\overline \mu  \left( {{A_j}} \right)} 
+		\label{eq8.7}
+		\end{equation}
+		\item check $\left( {\overline \mu  ,\overline {\mathcal{F}} } \right)$ is complete, i.e. $\overline {\mathcal{F}} \;is\;\overline \mu  $-complete.
+		
+		Assume that $ A \subseteq E \in \overline {\mathcal{F}} $ where $\overline \mu  \left( E \right) = 0$. We have to show that $ A \in \overline {\mathcal{F}} $.
+		
+		$\because E \in \overline {\mathcal{F}} \therefore E = B \cup N\;where\;B \in \mathcal{F},\;N \subseteq H \in  {\mathcal{F}} \;where\;\mu \left( H \right) = 0$
+		
+		$A = \emptyset  \cup A,\;\emptyset  \in F,A \subseteq E \subseteq B \cup N \subseteq \underbrace B_{ \in {\mathcal{F}}} \cup \underbrace H_{ \in {\mathcal{F}}} \in \mathcal{F}$, so $\mu \left( {B \cup N} \right) \leqslant \mu \left( B \right) + \mu \left( N \right) = 0$
+		by $\overline \mu  \left( E \right) = \mu \left( B \right) = 0,\mu \left( A \right) \leqslant \mu \left( B \right) \Rightarrow \mu \left( A \right) = 0$, so $A \in \overline {\mathcal{F}} $
+		\item check $\overline \mu  $ is unique. $ \mu : \mathcal{F} \to \mathbb{R}_{+} \bigcup \left\{ { + \infty } \right\} $, 
+		
+		And,  extension $\overline {{{\mathcal{F}}} _\mu}  = \left\{ {E \cup N,\;where\;E \in {\mathcal{F}},N \subseteq H \in \mathcal{F},\;where\;\mu \left( H \right) = 0} \right\}$, $\overline \mu  : \overline {{\mathcal{F}_\mu }}  \to {\mathbb{R}_ + } \cup \left\{ { + \infty } \right\} $.
+		
+		Assume that $\nu :\overline {{\mathcal{F}_\mu }}  \to {\mathbb{R}_ + } \cup \left\{ { + \infty } \right\}$, and $\nu \left( A \right) = \overline \mu  \left( A \right),\forall A \in \mathcal{F}$. Then we want show that $\nu \left( B \right) = \overline \mu  \left( B \right),\forall B \in \overline {{\mathcal{F}_\mu }}. $ 
+		
+		Let $B \in \overline {{\mathcal{F}_\mu }} ,B = E \cup N\;where\;E \in \mathcal{F},\;N \subseteq H \in \mathcal{F},\;where\;\mu \left( H \right) = 0,\nu \left( H \right) = \overline \mu  \left( H \right) = \mu \left( H \right) = 0$.
+		
+		fix B, $\overline \mu  \left( B \right) = \mu \left( E \right)\underbrace  = _{by\;E\; \in \mathcal{F}}v\left( E \right) \leqslant \nu \left( B \right)$
+		
+		$\nu \left( B \right) = \nu \left( {E \cup N} \right) \leqslant \nu \left( {E \cup H} \right) \leqslant \nu \left( E \right) + \nu \left( H \right) = \nu \left( E \right) = \overline \mu  \left( B \right)$, then
+		\begin{equation}
+		\nu \left( B \right) = \overline \mu  \left( B \right)
+		\label{eq8.8}
+		\end{equation}
+		
+		
+	\end{enumerate}
+\end{proof}
+
+${\pi ^*}:\mathcal{M} \to {\mathbb{R}_ + } \cup \left\{ { + \infty } \right\}$.
+
+\begin{claim}
+	$ \mathcal{M} $ is ${{\pi ^*}}$-complete.
+	\label{cla8.2}
+\end{claim}
+
+\begin{proof}
+	${\pi ^*}$-complete, i.e.  $  A \subseteq B,B \subseteq \mathcal{M},{\pi ^*}\left( B \right) = 0 \Rightarrow A \in \mathcal{M}$
+	
+	We have to show $ \forall E \subseteq \Omega,  $ ${\pi ^*}\left( E \right) \geqslant {\pi ^*}\left( {E \cap A} \right) + {\pi ^*}\left( {E \cap {A^c}} \right)$
+	\begin{enumerate}
+		\item $\because E \cap A \subseteq A \subseteq B\;\therefore {\pi ^*}\left( {E \cap A} \right) \leqslant {\pi ^*}\left( B \right) = 0$
+		\item ${\pi ^*}\left( {E \cap {A^c}} \right) \leqslant {\pi ^*}\left( E \right)$
+	\end{enumerate}
+   So, $ A \in \mathcal{M} $
+\end{proof}

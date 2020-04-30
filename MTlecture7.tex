@@ -1,0 +1,147 @@
+\classheader{Lecture 7}
+\setcounter{lecture}{7}
+\begin{center}
+	\Large \bf The Lebesgue Measure II
+\end{center}
+\vspace{0.25cm}
+
+$ \mathcal{S} = \left\{ {\emptyset ,\mathbb{R},\left( {a,b} \right],\left( {a,\infty } \right),\left( { - \infty ,b} \right]} \right\}, $  $\mu :a\left( \mathcal{S} \right) \to {\mathbb{R}_ + } \cup \left\{ { + \infty } \right\}, $
+\begin{equation}
+\mu \left( {\left( {a,b} \right]} \right) = b - a
+\end{equation}
+ 
+  
+
+
+\begin{theorem}
+    $\mu $ is $ \sigma $-additive on $ a(\mathcal{S}) $
+	\label{thm7.1}
+\end{theorem}
+
+\begin{remark}
+	${E_k} \in \left( { - N,N} \right]$, $ \mu $ is finite and $ \mu  $ is continuous from below at $ \emptyset $ (i.e. $ {E_k} \in a,{E_k} \downarrow \emptyset  \Rightarrow \mu \left( {{E_k}} \right) \to 0 $), by Lemma \ref{lem3.1} can imply Thm \ref{thm7.1} hold. 
+	\label{rmk7.1}
+\end{remark}
+
+\begin{proof}
+	Now we want to show that $ {E_k} \downarrow \emptyset ,{E_k} \in a,{E_k} \in \left( { - N,N} \right] $, then
+	\begin{equation}
+	\mu \left( {{E_k}} \right) \to 0
+	\label{eq7.2}
+	\end{equation}
+	If not, $\exists \delta  > 0$,  $\exists {E_k} \downarrow \emptyset ,{E_k} \in a,{E_k} \in \left( { - N,N} \right],$ such that
+	\begin{equation}
+	\mu \left( {{E_k}} \right) \geqslant 2\delta  > 0
+	\label{eq7.3}
+	\end{equation}
+    If $ \exists $ a compact set $\left\{ {{G_k}} \right\},\; s.t. \; \; {G_k} \supseteq {G_{k + 1}},{G_k} \subseteq {E_k}$, but
+	\begin{equation}
+	\emptyset  \ne \bigcap\limits_{k \geqslant 1} {{G_k}}  \subseteq \bigcap\limits_{k \geqslant 1} {{E_k}}  = \emptyset 
+	\label{eq7.4}
+	\end{equation}
+	
+	Then, we will find a sequence of compact sets $\left\{ {{G_k}} \right\}$ by induction.
+	
+	Our goal is : ${E_k} \subseteq \left( { - N,N} \right],\mu \left( {{E_n}} \right) \geqslant 2\delta ,{\left( {{F_k}} \right)_{1 \leqslant k \leqslant M}} {G_k} = \overline {{F_k}} .$ ${F_k}$ satisfy the flowing three conditions:
+	\begin{enumerate}
+		\item $\overline {{F_k}}  \subseteq {E_k},\;\;\;1 \leqslant k \leqslant n-1$
+		\item ${F_{k + 1}} \subseteq {F_k},\;\;\;1 \leqslant k \leqslant n - 1$
+		\item $\mu \left( {{E_n}\backslash {F_n}} \right) \leqslant \frac{\delta }{2} + \frac{\delta }{4} +  \cdots  + \frac{\delta }{{{2^n}}} = \delta $
+	\end{enumerate}
+	Now,
+	\begin{enumerate}
+		\item by $ E_{1} \in a, $ then ${E_1}$ can be written as
+		\begin{equation}
+		{E_1} = \sum\limits_{j = 1}^{{n_1}} {\left( {{a_{1,j}},{b_{1,j}}} \right]} 
+		\label{eq7.5}
+		\end{equation}
+		define $ F_{1} $ as 
+		\begin{equation}
+		{F_1} = \sum\limits_{j = 1}^{{n_1}} {\left( {{a_{1,j}} + {\varepsilon _1},{b_{1,j}}} \right]}  \in a
+		\end{equation}
+		$\mu \left( {{E_1}\backslash {F_1}} \right) = {m_1}{\varepsilon _1}$.
+		
+		 We will pick a small enough $ \epsilon $ to meet $\mu \left( {{E_1}\backslash {F_1}} \right) \leqslant \frac{\delta }{2},i.e.\;{m_1}{\varepsilon _1} \leqslant \frac{\delta }{2}$, and ${b_{1,j}} - {a_{1,j}} \geqslant {\varepsilon _1},i.e.\;\;\mathop {\min }\limits_j \left\{ {{b_{1,j}} - {a_{1,j}}} \right\} \geqslant {\varepsilon _1}$, so we choose $0 < {\varepsilon _1} \leqslant \min \left\{ {\frac{\delta }{{2{m_1}}},\mathop {\min }\limits_{1 \leqslant j \leqslant {m_1}} \left\{ {{b_{1,j}} - {a_{1,j}}} \right\}} \right\}$.
+		\item  We will show  $\mu \left( {{E_2} \cap {F_1}} \right)$ have a lower positive bound , i e. ${E_2} \cap {F_1} \ne \emptyset $
+		\begin{equation}
+		2\delta  \leqslant \mu \left( {{E_2}} \right) = \mu \left( {{E_2} \cap {F_1}} \right) + \underbrace {\mu \left( {{E_2}\backslash {F_1}} \right)}_{ \leqslant \mu \left( {{E_1}\backslash {F_1}} \right) \leqslant \frac{\delta }{2}} \Rightarrow \mu \left( {{E_2} \cap {F_1}} \right) \geqslant 2\delta  - \frac{\delta }{2} > 0
+		\label{eq7.7}
+		\end{equation}
+		by ${E_2} \cap {F_1} \ne \emptyset ,{E_2} \cap {F_1} \in a$, then $ {E_2} \cap {F_1} $ can be written as
+		\begin{equation}
+		{E_2} \cap {F_1} = \sum\limits_{j = 1}^{{m_2}} {\left( {{a_{2,j}},{b_{2,j}}} \right]} 
+		\label{eq7.8}
+		\end{equation}
+		Define $ F_{2}: $
+		\begin{equation}
+		{F_2} = \sum\limits_{j = 1}^{{m_2}} {\left( {{a_{2,j}} + {\varepsilon _2},{b_{2,j}}} \right]} 
+		\label{eq7.9}
+		\end{equation}
+		choose a small enough $ \epsilon_{2} $ satisfies that
+		\begin{equation}
+		{F_2} \subseteq \overline {{F_2}}  \subseteq {E_2} \cap {F_1}
+		\label{eq7.10}
+		\end{equation}
+		then ${F_2} \subseteq {F_1},\overline {{F_2}}  \subseteq {E_2}$, and ${F_2} \subseteq {F_1} \Rightarrow \overline {{F_2}}  \subseteq \overline {{F_1}} $, then we get that
+		\begin{equation}
+		\begin{split}
+		{F_2} & \subseteq \overline {{F_2}}  \subseteq {E_2}\\
+		{F_2} & \subseteq {F_1}\\
+		\mu \left( {{E_2}\backslash {F_2}} \right) & \leqslant \frac{\delta }{2} + \frac{\delta }{4}
+		\end{split}
+		\label{eq7.11}
+		\end{equation}
+		\item assume the ${F_n}$ satisfies  the three conditions as our goal above
+		\begin{equation}
+		2\delta  \leqslant \mu \left( {{E_{n + 1}}} \right) = \mu \left( {{E_{n + 1}} \cap {F_n}} \right) + \underbrace {\mu \left( {{E_{n + 1}}\backslash {F_n}} \right)}_{\mu \left( {{E_n}\backslash F} \right) \leqslant \delta } \Rightarrow \mu \left( {{E_{n + 1}} \cap {F_n}} \right) \geqslant \delta  > 0
+		\label{eq7.12}
+		\end{equation}
+		by ${E_{n + 1}} \cap {F_n} \ne \emptyset $ and ${E_{n + 1}} \cap {F_n} \in a$ then
+		\begin{equation}
+		{E_{n + 1}} \cap {F_n} = \sum\limits_{j = 1}^{{k_{n + 1}}} {\left( {{a_{n + 1,j}},{b_{n + 1,j}}} \right]} 
+		\label{eq7.13}
+		\end{equation}
+		then we define $ F_{n+1} $ as
+		\begin{equation}
+		{F_{n + 1}} = \sum\limits_{j = 1}^{{k_{n + 1}}} {\left( {{a_{n + 1,j}} + {\varepsilon _{n + 1}},{b_{n + 1,j}}} \right]} 
+		\label{eq7.14}
+		\end{equation}
+		choose a small enough $ \epsilon_{n+1} $ satisfies that
+		\begin{equation}
+		{F_{n + 1}} \subseteq \overline {{F_{n + 1}}}  \subseteq {E_{n + 1}} \cap {F_n}
+		\label{eq7.15}
+		\end{equation}
+		then ${F_{n + 1}} \subseteq {E_{n + 1}},{F_{n + 1}} \subseteq {F_n}$, and $\overline {{F_{n + 1}}}  \subseteq \overline {{F_n}} $, let ${\varepsilon _{n + 1}} = \frac{\delta }{{{k_{n + 1}} \cdot {2^{n + 1}}}}$, then $\mu \left( {\left( {{E_{n + 1}} \cap {F_n}} \right)\backslash {F_{n + 1}}} \right) \leqslant \frac{\delta }{{{2^{n + 1}}}}$. 
+		
+		Then 
+		\begin{equation}
+		\begin{split}
+		\mu \left( {{E_{n + 1}}\backslash {F_{n + 1}}} \right) & = \mu \left( {\left( {{E_{n + 1}} \cap {F_n}} \right)\backslash {F_{n + 1}}} \right) + \underbrace {\mu \left( {\left( {{E_{n + 1}}\backslash {F_n}} \right)\backslash {F_{n + 1}}} \right)}_{\underbrace { \leqslant \mu \left( {{E_{n + 1}}\backslash {F_n}} \right)}_{ \leqslant \mu \left( {{E_n}\backslash {F_n}} \right) \leqslant \frac{\delta }{2} +  \cdots  + \frac{\delta }{{{2^n}}} }}\\
+														       & \le \frac{\delta }{{{2^{n + 1}}}} + \frac{\delta }{2} + \frac{\delta }{4} +  \cdots  + \frac{\delta }{{{2^n}}} = \delta \left( {1 - {{\left( {\frac{1}{2}} \right)}^{n + 1}}} \right)
+		\end{split}
+		\label{eq7.16}
+		\end{equation}
+		define ${G_k} = \overline {{F_k}} ,$ then ${G_{k + 1}} = \overline {{F_{k + 1}}}  \subseteq \overline {{F_k}}  = {G_k}$
+		    $ G_{k}: $ satisfies that 
+		\begin{enumerate}
+			\item ${G_{k + 1}} \subseteq {G_k}$
+			\item $ G_{k}$  compact
+			\item $  {G_k} \neq \emptyset $
+		\end{enumerate}
+		
+		Why $  {G_k} \neq \emptyset $ because:
+		\begin{equation}
+		2\delta  \leqslant \mu \left( {{E_k}} \right) = \mu \left( {{E_k}\backslash {F_k}} \right) + \mu \left( {{E_k} \cap {F_k}} \right) \leqslant \delta  + \mu \left( {{F_k}} \right) \Rightarrow \mu \left( {{F_k}} \right) \ge  \delta 
+		\label{eq7.17}
+		\end{equation}
+		Then ${F_k} \ne \emptyset  \Rightarrow {G_k} = \overline {{F_k}}  \ne \emptyset $.
+	\end{enumerate}
+	But
+	\begin{equation}
+	\emptyset  \ne \bigcap\limits_{k \geqslant 1} {{G_k}}  \subseteq \bigcap\limits_{k \geqslant 1} {{E_k}}  = \emptyset 
+	\label{eq7.18}
+	\end{equation}
+	
+	Above all, ${E_k} \in \left( { - N,N} \right]$, $ \mu $ is finite and $ \mu  $ is continuous from below at $ \emptyset $, then Lebesgue $\mu $ is $ \sigma $-additive on $ a(\mathcal{S}) $.
+\end{proof}
+

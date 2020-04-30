@@ -1,0 +1,87 @@
+\classheader{Lecture 1}
+\setcounter{lecture}{1}
+
+\begin{center}
+	\Large \bf Introduction: a Non-measurable Set
+\end{center}
+
+\vspace{0.25cm}
+
+$ \lambda $  satisfies the flowing: 
+\begin{enumerate}
+	\setcounter{enumi}{-1}
+	\item $\lambda :\;\mathcal{P}\left( \mathbb{R} \right) \to {\mathbb{R}_ + } \cup \left\{ { + \infty } \right\}$
+	\item $\lambda \left( {\left( {a,b} \right]} \right) = b - a$
+	\item $A \subseteq \mathbb{R},\;A + x = \left\{ {x + y:\;y \in A} \right\},\;\;\forall A,\;A \subseteq \mathbb{R},\;\forall x \in \mathbb{R} : $
+	\begin{equation}
+	\lambda \left( {A + x} \right) = \lambda \left( A \right)
+	\end{equation}
+	\item $A = \bigcup\limits_{j \geqslant 1} {{A_j}} ,\;\;{A_j} \cap {A_k} = \emptyset : $
+	\begin{equation}
+	\lambda \left( A \right) = \sum\limits_k {\lambda \left( {{A_k}} \right)} 
+	\end{equation}
+\end{enumerate}
+
+
+\begin{definition}
+	$ x \sim y $,   $ x,y \in \mathbb{R} $ if $ y - x \in \mathbb{Q}. \left[ x \right] = \left\{ {y \in \mathbb{R},\;y - x \in \mathbb{Q}} \right\}. \\
+	\text{} \qquad \qquad \qquad \quad  \ \ \Lambda  = \mathbb{R}{|_ \sim }$, only one point represents the equivalence class of $ \Omega $ , like $ \alpha, \beta.$
+\end{definition}
+
+$ \Omega $ is a class of equivalence class, if $\Omega  \subseteq R,\Omega  \subseteq \left( {0,1} \right)$
+
+\begin{claim}
+	$\left\{ \begin{matrix} 
+	\Omega  + q = \Omega  + q \hfill \cr 
+	\Omega  + q \cap \Omega  + q = \emptyset  \hfill \cr 
+	\end{matrix}  \right.\;\;\;q,p \in \mathbb{Q}$
+\end{claim}
+
+\begin{proof}
+	Assume that $ \Omega  + q \cap \Omega  + q \ne \emptyset $ then, $x = \alpha  + p = \beta  + q,\;\alpha ,\beta  \in \Omega \Rightarrow \alpha  - \beta  = q - p \in \mathbb{Q} \Rightarrow \alpha  = \beta  \Rightarrow \left[ {q \ne p,p,q \in \mathbb{Q} \Rightarrow \left( {\Omega  + q} \right) \cap \left( {\Omega  + p} \right) = \emptyset } \right].$
+\end{proof}
+
+\begin{claim}
+	$\Omega  + q \subseteq \left( { - 1,2} \right)$, if  $ -1 < q < 1 $.
+\end{claim}
+ 
+then we can get 
+
+\begin{equation}
+\sum\limits_{\scriptstyle q \in \mathbb{Q} \hfill \atop 
+	\scriptstyle  - 1 < q < 1 \hfill}  {\left( {\Omega  + q} \right)}  \subseteq \left( { - 1,2} \right)
+\end{equation}
+
+\begin{claim}
+	$E \subseteq F \Rightarrow \lambda \left( E \right) \leqslant \lambda \left( F \right)$
+\end{claim}
+\begin{proof}
+	$\because E \subseteq F\therefore F = E \cup \left( {F\backslash E} \right),\;E \cap \left( {F\backslash E} \right) = \emptyset $, then
+	$\lambda \left( F \right) = \lambda \left( E \right) + \lambda \left( {\left( {F\backslash E} \right)} \right) \Rightarrow \lambda \left( F \right) \geqslant \lambda \left( E \right)$.
+\end{proof}
+Then,  
+\begin{equation}
+\lambda \left( {\sum\limits_{\scriptstyle q \in \mathbb{Q} \hfill \atop 
+		\scriptstyle  - 1 < q < 1 \hfill}  {\left( {\Omega  + q} \right)} } \right) \leqslant \lambda \left( {\left( { - 1,2} \right)} \right) = 3
+\end{equation}
+
+and ,
+\begin{equation}
+\infty \cdot \lambda \left( {\left( {\Omega  + q} \right)} \right) =  \infty \cdot \lambda \left( \Omega  \right) \le 3 \Rightarrow \lambda \left( {\sum\limits_{\scriptstyle \;\;q \in \mathbb{Q} \hfill \atop 
+		\scriptstyle  - 1 < q < 1 \hfill}  {\left( {\Omega  + q} \right)} } \right) = 0
+\end{equation}
+
+\begin{claim}
+	$\left( {0,1} \right) \subseteq \sum\limits_{\scriptstyle \;\;q \in \mathbb{Q} \hfill \atop 
+		\scriptstyle  - 1 < q < 1 \hfill}  {\left( {\Omega  + q} \right)} $
+\end{claim}
+
+\begin{proof}
+	$ \forall $ fixed $  x \in \left( {0,1} \right), \exists \alpha  \in \left[ x \right] \cap \Omega ,\;\alpha  \in \left( {0,1} \right) $, and we know that $\alpha  - x = q \in \mathbb{Q},\; -  < q < 1\; \Rightarrow x = \alpha  + q,\;x \in \Omega  + q$
+\end{proof}
+
+But, we get that: 
+\begin{equation}
+1 = \lambda \left( {\left( {0,1} \right)} \right) \leqslant \lambda \left( {\sum\limits_{q \in \mathbb{Q}} {\Omega  + q} } \right) = 0
+\end{equation}
+it is impossible.

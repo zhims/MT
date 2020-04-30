@@ -1,0 +1,192 @@
+\classheader{Lecture 6}
+\setcounter{lecture}{6}
+\begin{center}
+	\Large \bf The Lebesgue Measure I
+\end{center}
+\vspace{0.25cm}
+
+\begin{definition}
+	$ \mathcal{S} \subseteq \mathcal{P}(\mathbb{R}) $, we define $ \mathcal{S} $ as below:
+	\begin{equation}
+	\mathcal{S} = \left\{ {\emptyset ,\mathbb{R},\left( {a,b} \right],\left( {a,\infty } \right),\left( { - \infty ,b} \right]} \right\}
+	\label{eq6.1}
+	\end{equation}
+	\label{def6.1}
+\end{definition}
+
+\begin{remark}
+	$ \mathcal{S} $ as above, then $ \mathcal{S} $ is a semialgebra
+\end{remark}
+
+\begin{proof}
+	by Def \ref{def2.1}.
+\end{proof}
+
+\begin{definition}
+	$ \mu: \mathcal{S} \to \mathbb{R}_{+}\bigcup \left\{ { + \infty } \right\} $, additive, and
+	\begin{equation}
+	\mu \left( \emptyset  \right) = 0,\mu \left( {\left( {a,b} \right]} \right) = b - a,\mu \left( {\left( { - \infty ,b} \right]} \right) =  + \infty ,\mu \left( \mathbb{R} \right) =  + \infty 
+	\label{eq6.2}
+	\end{equation}
+	\label{def6.2}
+\end{definition}
+
+\begin{theorem}
+	$ \mu $ is additive on a semialgebra $ \mathcal{S} $ and defined as Def \ref{def6.2}, then $ \mu $ is $ \sigma- $additive, i.e.
+	\begin{equation}
+	A = \sum\limits_{j \geqslant 1} {{A_j}}  \Rightarrow \mu \left( A \right) = \sum\limits_{j \geqslant 1} {\mu \left( {{A_j}} \right)} ,\;\;\;\;\;A,{A_j} \in \mathcal{S}
+	\label{eq6.3}
+	\end{equation}
+	\label{thm6.1}
+\end{theorem}
+
+\begin{remark}
+	It is difficult to prove Thm \ref{thm6.1} $\left( {a,b} \right] \cup \left( {c,d} \right]$ is not in the semialgebra $ \mathcal{S} $. But, $ \mathcal{S} \to a(\mathcal{S}) $ with respect to  $ \mu \to \nu $.
+	\label{rmk6.2}
+\end{remark}
+
+\begin{proof}
+    \text{}
+	\begin{enumerate}
+		\item 
+		\begin{equation}
+		\because A = \sum\limits_{j \geqslant 1} {{A_j}}  \supseteq \sum\limits_{j = 1}^n {{A_j}} 
+		\label{eq6.4}
+		\end{equation}
+		By  $ \nu $ is additive $ \Rightarrow \nu $ is monotone \& subadditive,
+		\begin{equation}
+		\therefore \nu \left( A \right) \geqslant \nu \left( {\sum\limits_{j = 1}^n {{A_j}} } \right) = \sum\limits_{j = 1}^n {\nu \left( {{A_j}} \right)} ,\;\;\;\forall n
+		\label{eq6.5}
+		\end{equation}
+		so 
+		\begin{equation}
+		\therefore \nu \left( A \right) \geqslant \sum\limits_{j \geqslant 1} {\nu \left( {{A_j}} \right)} 
+		\label{eq6.6}
+		\end{equation}
+		\item 
+		\begin{enumerate}
+			\item Assume that $A = \left( {a,b} \right],{A_j} = \left( {{a_j},{b_j}} \right],A = \sum\limits_{j \geqslant 1} {{A_j}} $, we want to show that
+			\begin{equation}
+			\nu \left( A \right) = b - a \leqslant \sum\limits_{j \geqslant 1} {\left( {{b_j} - {a_j}} \right)}  = \sum\limits_{j \geqslant 1} {\nu \left( {{A_j}} \right)} 
+			\label{eq6.7}
+			\end{equation}
+			
+			For any given $ \epsilon >0 $, we have that
+			\begin{equation}
+			\left[ {a + \varepsilon ,b} \right] \subseteq \left( {a,b} \right] = \sum\limits_{j \geqslant 1} {\left( {{a_j},{b_j}} \right]}  \subseteq \bigcup\limits_{j \geqslant 1} {\left( {{a_j},{b_j} + \frac{\varepsilon }{{{2^j}}}} \right)} 
+			\label{eq6.8}
+			\end{equation}
+			By  a set $ K $ is compact i.e. $ K $ is closed and bounded  $ \Rightarrow $ Any open cover for $ K $ has a finite subcover
+			\begin{equation}
+			\left[ {a + \varepsilon ,b} \right] \subseteq \bigcup\limits_{k \geqslant 1} {\left( {{a_{jk}},{b_{jk}} + \frac{\varepsilon }{{{2^{jk}}}}} \right)} 
+			\label{eq6.9}
+			\end{equation}
+			By  $ \nu $ is additive $ \Rightarrow \nu $ is monotone \& subadditive, we have
+			\begin{equation}
+			b - a - \varepsilon  \leqslant \nu \left( {\left[ {a + \varepsilon ,b} \right]} \right) = \nu \left( {\bigcup\limits_{k = 1}^m {\left( {{a_{jk}},{b_{jk}} + \frac{\varepsilon }{{{2^{jk}}}}} \right)} } \right) \leqslant \sum\limits_{k = 1}^m {\nu \left( {{a_{jk}},{b_{jk}} + \frac{\varepsilon }{{{2^{jk}}}}} \right)} 
+			\label{eq6.10}
+			\end{equation}
+			so we can get that
+			\begin{equation}
+			b - a - \varepsilon  \leqslant \sum\limits_{k = 1}^m {\left( {{b_{jk}} - {a_{jk}} + \frac{\varepsilon }{{{2^{jk}}}}} \right)}  \leqslant \sum\limits_{j \geqslant 1} {\left( {{b_j} - {a_j} + \frac{\varepsilon }{{{2^j}}}} \right)}  = \sum\limits_{j \geqslant 1} {\left( {b - a} \right)}  + \varepsilon 
+			\label{eq6.11}
+			\end{equation}
+			so Eq. \ref{eq6.7} holds.
+			\item General case $ A \in \mathcal{S} $, ${E_n} = \left( { - n,n} \right] \uparrow \mathbb{R}$.
+			
+			$A \cap {E_n} = \sum\limits_{j \geqslant 1} {{A_j} \cap {E_n}} $.
+			
+			By $ \nu $ is additive on a semi-algebra
+			\begin{equation}
+			\nu \left( {A \cap {E_n}} \right) = \sum\limits_{j \geqslant 1} {\nu \left( {{A_j} \cap {E_n}} \right)}  \leqslant \sum\limits_{j \geqslant 1} {\nu \left( {{A_j}} \right)} 
+			\label{eq6.12}
+			\end{equation}
+			By Remark \ref{rmk6.3}, let $ n \to \infty $, we have
+			\begin{equation}
+			\nu \left( A \right) = \mathop {\lim }\limits_{n \to \infty } \nu \left( {A \cap {E_n}} \right) \leqslant \sum\limits_{j \geqslant 1} {\nu \left( {{A_j}} \right)}
+			\label{eq6.13} 
+			\end{equation}
+		\end{enumerate}
+	\end{enumerate}
+\end{proof}
+
+\begin{remark}
+	${E_n} = \left( { - n,n} \right] \uparrow \mathbb{R}$, $ \nu $ is additive on a semi-algebra then
+	\begin{equation}
+	\nu \left( A \right) = \mathop {\lim }\limits_{n \to \infty } \;\nu \left( {A \cap {E_n}} \right)
+	\label{eq6.14}
+	\end{equation}
+	\label{rmk6.3}
+\end{remark}
+
+\begin{proof}
+	\begin{equation}
+	\because {E_n} \uparrow \mathbb{R},\therefore A \cap E \uparrow ,\therefore \mathop {\lim }\limits_{n \to \infty } \left( {A \cap {E_n}} \right) = \bigcup\limits_{n \geqslant 1} {\left( {A \cap {E_n}} \right)}  = A \cap \left( {\bigcup\limits_{n \geqslant 1} {{E_n}} } \right) = A
+	\label{eq6.15}
+	\end{equation}
+	 $ \nu $ is additive, 
+	\begin{equation}
+	\nu \left( A \right) = \nu \left( {\bigcup\limits_{n \geqslant 1} {A \cap {E_n}} } \right) = \nu \left( {\mathop {\lim }\limits_{n \to \infty } A \cap {E_n}} \right) \stackrel{\color{red} why}{=} \mathop {\lim }\limits_{n \to \infty } \nu \left( {A \cap {E_n}} \right)
+	\label{eq6.16}
+	\end{equation}
+	{\color{red} why }, because we will check via Def \ref{def6.1} except $ A = \left( {a,b} \right]$
+	
+	\begin{enumerate}
+		\item $	A = \emptyset $
+		\item $ A = \mathbb{R} $
+		\item $ A = \left( {a,\infty } \right)$
+		\begin{enumerate}
+			\item left hand of {\color{red} why } in Eq. \ref{eq6.16}
+			\begin{equation}
+			\because {A \cap {E_n}} = \left( {a, + \infty } \right) \cap \left( { - n,n} \right) = \left\{ {\begin{matrix}
+				{\left( {a,n} \right)}  \\ 
+				{\left( { - n,n} \right)}  \\ 
+				\end{matrix} } \right.\;\;\begin{matrix}
+			{a \geqslant  - n}  \\ 
+			{a <  - n}  \\ 
+			\end{matrix} 
+			\end{equation}
+			\begin{equation}
+			\therefore \mathop {\lim }\limits_{n \to \infty } \left( {A \cap {E_n}} \right) = \left( { - \infty , + \infty } \right) = \mathbb{R}
+			\end{equation}
+			by Def \ref{def6.2}
+			\begin{equation}
+			\mu \left( {\mathop {\lim }\limits_{n \to \infty } \left( {A \cap {E_n}} \right)} \right) = \mu \left( \mathbb{R} \right) =  + \infty 
+			\end{equation}
+			\item right hand of {\color{red} why } in Eq. \ref{eq6.16}
+			\begin{equation}
+			\because \nu \left( {A \cap {E_n}} \right) = \nu \left( {\left\{ {\begin{matrix}
+					{\left( {a,n} \right)}  \\ 
+					{\left( { - n,n} \right)}  \\ 
+					
+					\end{matrix} \;\;\begin{matrix}
+					{a \geqslant  - n}  \\ 
+					{a <  - n}  \\ 
+					
+					\end{matrix} } \right.} \right) = \left\{ {\begin{matrix}
+				{n - a}  \\ 
+				{2n}  \\ 
+				
+				\end{matrix} } \right.\;\;\begin{matrix}
+			{a \geqslant  - n}  \\ 
+			{a <  - n}  \\ 
+			
+			\end{matrix} 
+			\end{equation}
+			\begin{equation}
+			\therefore \mathop {\lim }\limits_{n \to \infty } \nu \left( {A \cap {E_n}} \right) = \mathop {\lim }\limits_{n \to \infty } \left\{ {\begin{matrix}
+				{n - a}  \\ 
+				{2n}  \\ 
+				
+				\end{matrix} } \right.\;\;\begin{matrix}
+			{a \geqslant  - n}  \\ 
+			{a <  - n}  \\ 
+			
+			\end{matrix}  =  + \infty 
+			\end{equation}
+		\end{enumerate}
+	     So Eq \ref{eq6.16} holds.
+		\item $ A = \left( { - \infty ,b} \right]$
+	\end{enumerate}
+\end{proof}
+ 

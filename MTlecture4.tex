@@ -1,0 +1,584 @@
+\classheader{Lecture 4}
+\setcounter{lecture}{4}
+
+\begin{center}
+	\Large \bf Caratheodory Theorem
+\end{center}
+
+\vspace{0.25cm}
+
+Intuition:
+\begin{equation}
+\begin{matrix}
+{\sigma-add} & {\mu :f \to {\mathbb{R}_ + } \cup \left\{ { + \infty } \right\}} & {f \subseteq \mathcal{P}\left( \Omega  \right),f\;is\;semialgebra}  \\ 
+\downarrow  &  \downarrow  & {}  \\ 
+{\sigma-add} & {\nu :a\left( f \right) \to {\mathbb{R}_ + } \cup \left\{ { + \infty } \right\}} & {a\left( f \right)\;algebra \; generated \; by \; f}  \\ 
+\downarrow  &  \downarrow  & {}  \\ 
+{\sigma-add} & {\pi :\mathcal{F}\left( a \right) \to {\mathbb{R}_ + } \cup \left\{ { + \infty } \right\}} & {\mathcal{F}\left( a \right)\; is \; \sigma  - algebra\;generated\;by\;algebra}  \\ 
+\end{matrix}
+\label{eq4.1} 
+\end{equation}
+
+The big picture of the proof to the  Caratheodory Theorem:
+\begin{enumerate}
+	\item  Define the $ {\pi ^*} $ outer measure:
+	\begin{equation}
+	{\pi ^*} = \mathop {\inf }\limits_{\left\{ {{E_i}} \right\}} \sum\limits_{i \geqslant 1} {\nu \left( {{E_i}} \right)} 
+	\label{eq4.2} 
+	\end{equation}
+	\item  $ \mathcal{M} $ $ \sigma $-algebra, $ \mathcal{M} \supseteq \mathcal{F}\left(a\right) $
+	\item 
+	\begin{equation}
+	{\pi ^*}:\mathcal{M} \to {\mathbb{R}_ + } \cup \left\{ { + \infty } \right\}
+	\label{eq4.3} 
+	\end{equation}
+	is $ \sigma $-additive, and 
+	\begin{equation}
+	{\pi ^*}{|_a} = \nu
+	\label{eq4.4} 
+	\end{equation}
+	\item (uniqueness) $ \mu_{1},\mu_{2}: \mathcal{F}\left(a\right) \to \mathbb{R}_{+}\bigcup \{+\infty\} $, $ \Omega $ is $ \sigma $-finite($ \mu_{1} $), if $  E_{j} \uparrow \Omega $, ${\mu _1}\left( {{E_j}} \right) < \infty ,\forall j,\;{E_j} \in a$ and ${\mu _1}{|_a} = {\mu _2}{|_a}$ then implies that
+	\begin{equation}
+	{\mu _1} = {\mu _2}
+	\label{eq4.5} 
+	\end{equation}
+\end{enumerate}
+ 
+ \begin{equation}
+ {\pi ^*}:\;\mathcal{P}\left( \Omega  \right) \to {\mathbb{R}_ + } \cup \left\{ { + \infty } \right\}
+ \label{eq4.6}
+ \end{equation}
+ 
+We will prove $ {\pi ^*} $ is an outer measure.
+
+And we will construct a family of subsets $ \mathcal{M} $
+\begin{equation}
+\mathcal{M} \subseteq  \mathcal{P}\left(\Omega\right)
+\label{eq4.7}
+\end{equation}
+
+we will also prove $ \mathcal{M} $ satisfies the following:
+\begin{enumerate}
+	\item $ \mathcal{M} $ is a $ \sigma- $algebra
+	\item $ \mathcal{M}  \supseteq a$
+	\item ${\pi ^*}{|_\mathcal{M}}$ $ \sigma- $additive
+	\item ${\pi ^*}{|_a} = \nu $
+\end{enumerate}
+
+Next, we will define $ {\pi ^*} $ and $ \mathcal{M} $ .
+\newpage 
+ 
+ {\large Step 1}
+
+\begin{definition}[$ {\pi ^*} $]
+	$ {\pi ^*}:\;\mathcal{P}\left( \Omega  \right) \to {\mathbb{R}_ + } \cup \left\{ { + \infty } \right\} $, 
+	$ A \in \Omega, $ $\left\{ {{E_i},i \geqslant 1} \right\},{E_i} \in a,A \subseteq \bigcup {{E_i}} $, $\left\{ {{E_i}} \right\}$ is a covering of A, then we define that
+	\begin{equation}
+	{\pi ^*} = \mathop {\inf }\limits_{\left\{ {{E_i}} \right\},A} \ \sum\limits_{i \geqslant 1} {\nu \left( {{E_i}} \right)} 
+	\label{eq4.8}
+	\end{equation}
+	where $\nu :\;a\left( f \right) \to {\mathbb{R}_ + } \cup \left\{ { + \infty } \right\},\; is \; \sigma $-additive. 
+	\label{def4.1}
+\end{definition}
+
+
+
+\begin{definition}[Outer measure]
+	$\mu :\;c \to {\mathbb{R}_ + } \cup \left\{ { + \infty } \right\},c \subseteq P\left( \Omega  \right),\emptyset  \in c$, $ \mu  $ is a outer measure if
+	\begin{enumerate}
+		\item $\mu \left( \emptyset  \right) = 0$
+		\item (monotone) $E \subseteq F,\;E,F \in c\; \Rightarrow \mu \left( E \right) \leqslant \mu \left( F \right)$
+		\item (subadditive) $E,{E_i} \in c,\;E \subseteq \bigcup\limits_i {{E_i}}  \Rightarrow \mu \left( E \right) \leqslant \sum\limits_i {\mu \left( {{E_i}} \right)} $
+	\end{enumerate}
+	\label{def4.2}
+\end{definition}
+
+\begin{theorem}
+	$ \pi^{*} $ in \ref{def4.1} is a outer measure.
+	\label{thm4.1}
+\end{theorem}
+
+\begin{proof}
+	We will check the conditions in  Def \ref{def4.2}. 
+	\begin{enumerate}
+		\item check ${\pi ^*}\left( \emptyset  \right) = 0$
+		\begin{enumerate}
+			\item ${E_i} = \emptyset ,\emptyset  \subseteq \bigcup\limits_{i \geqslant 1} {{E_i}} $ then
+			\begin{equation}
+			{\pi ^*}\left( \emptyset  \right) = \mathop {\inf }\limits_{\left\{ {{E_i}} \right\},\emptyset } \sum\limits_{i \geqslant 1} {\nu \left( {{E_i}} \right)}  \leqslant \sum\limits_{i \geqslant 1} {\nu \left( {{E_i}} \right)}  = 0
+			\end{equation}
+			\item ${E_i} \in a,\left\{ {{E_i}} \right\},\emptyset  \subseteq \bigcup\limits_{i \geqslant 1} {{E_i}} $, then
+			\begin{equation}
+			\sum\limits_{i \geqslant 1} {\nu \left( {{E_i}} \right)}  \geqslant 0 \Rightarrow {\pi ^*}\left( \emptyset  \right) \geqslant 0
+			\end{equation}
+		\end{enumerate}
+		\item check $E \subseteq F,\;{\pi ^*}\left( E \right) \leqslant {\pi ^*}\left( F \right)$
+		
+		Let's take any covering of $ F $:$\left\{ {{E_i}} \right\},{E_i} \in a,F \subseteq \bigcup\limits_{i \geqslant 1} {{E_i}} $ is also a covering of $ E $, then
+		\begin{equation}
+		{\pi ^*}\left( E \right) = \mathop {\inf }\limits_{\left\{ {{E_i}} \right\},E} \sum\limits_{i \geqslant 1} {\nu \left( {{E_i}} \right)}  \leqslant {\pi ^*}\left( F \right) = \mathop {\inf }\limits_{\left\{ {{E_i}} \right\},F} \sum\limits_{i \geqslant 1} {\nu \left( {{E_i}} \right)} 
+		\label{eq4.11}
+		\end{equation}
+		\item check $E \subseteq \bigcup\limits_{i \geqslant 1} {{E_i}} ,\;\;{\pi ^*}\left( E \right) \leqslant \sum\limits_{i \geqslant 1} {{\pi ^*}\left( {{E_i}} \right)} $
+		\begin{enumerate}
+			\item ${\pi ^*}\left( {{E_i}} \right) = \infty $ then 
+			\begin{equation}
+			{\pi ^*}\left( E \right) \leqslant \sum\limits_{i \geqslant 1} {{\pi ^*}\left( {{E_i}} \right)}
+			\label{eq4.12}
+			\end{equation}
+			\item ${\pi ^*}\left( {{E_i}} \right) < \infty $, then
+			\begin{equation}
+			{\pi ^*}\left( {{E_i}} \right) = \mathop {\inf }\limits_{\left\{ {{H_{ik}}} \right\},\;{E_i}} \sum\limits_{k \geqslant 1} {\nu \left( {{H_{ik}}} \right)} 
+			\label{eq4.13}
+			\end{equation}
+			then there $\exists \left\{ {{H_{ik}}} \right\} \in a,{E_i} \subseteq \bigcup\limits_{k \geqslant 1} {{H_{ik}}} $ such that
+			\begin{equation}
+			{\pi ^*}\left( {{E_i}} \right) = \mathop {\inf }\limits_{\left\{ {{H_{ik}}} \right\},\;{E_i}} \sum\limits_{k \geqslant 1} {\nu \left( {{H_{ik}}} \right)}  \leqslant \sum\limits_{k \geqslant 1} {\nu \left( {{H_{ik}}} \right)}  \leqslant {\pi ^*}\left( {{E_i}} \right) + \frac{\varepsilon }{{{2^i}}}
+			\label{eq4.14}
+			\end{equation}
+			$\left\{ {{H_{ik}}} \right\}$ is a covering of E, then
+			\begin{equation}
+			\begin{split}
+			{\pi ^*}\left( E \right) \leqslant \sum\limits_{i,k} {\nu \left( {{H_{ik}}} \right)}  \leqslant \sum\limits_{i \geqslant 1} {\left( {{\pi ^*}\left( {{E_i}} \right) + \frac{\varepsilon }{{{2^i}}}} \right)}  \leqslant \sum\limits_{i \geqslant 1} {{\pi ^*}\left( {{E_i}} \right) + \varepsilon } 
+			\end{split}
+			\label{eq4.15}
+			\end{equation}
+			so 
+			\begin{equation}
+			{\pi ^*}\left( E \right) \leqslant \sum\limits_{i \geqslant 1} {{\pi ^*}\left( {{E_i}} \right)} 
+			\label{eq4.16}
+			\end{equation}
+		\end{enumerate}
+	\end{enumerate}
+\end{proof}
+
+ {\large Step 2}
+ 
+ \begin{definition}[Measurable set $ \mathcal{M} $]
+ 	A set called measurable set $ \mathcal{M} $ if $ A \in \mathcal{M} $  $ \forall E \in \Omega $, we have that
+ 	\begin{equation}
+ 	{\pi ^*}\left( E \right) = {\pi ^*}\left( {E\bigcap A } \right) + {\pi ^*}\left( {E\bigcap {{A^c}} } \right)
+ 	\label{eq4.17}
+ 	\end{equation}
+ 	\label{def4.3}
+ \end{definition}
+
+\begin{theorem}
+	If $ \mathcal{M} $ definited as Def \ref{def4.3}, then 
+	\begin{enumerate}
+		\item $\mathcal{M} \supseteq a$
+		\item $ \mathcal{M} $ is a $ \sigma- $algebra
+	\end{enumerate}
+     \label{thm4.2}
+\end{theorem}
+
+\begin{remark}
+	\begin{equation}
+	E \subseteq \left( {E \cap A} \right) \cup \left( {E \cap {A^c}} \right) \Rightarrow {\pi ^*}\left( E \right) \leqslant {\pi ^*}\left( {E \cap A} \right) + {\pi ^*}\left( {E \cap {A^c}} \right)
+	\label{eq4.18}
+	\end{equation}
+	so we only to check $ \ge $ in Eq \ref{eq4.17}
+	\label{rmk4.1}
+\end{remark}
+
+\begin{proof}
+	${\pi ^*}$ is an outer measurable by Thm \ref{def4.1}, then by subadditive of outer measure.
+\end{proof}
+
+Now we proof Thm \ref{thm4.2}.
+\begin{proof}
+	\text{}
+	\begin{enumerate}
+		\item $ a \in \mathcal{M} $
+		
+		Suppose that $ A \in a, $  $ E \in \Omega $, we will show that
+		\begin{equation}
+		{\pi ^*}\left( E \right) \geqslant {\pi ^*}\left( {E \cap A} \right) + {\pi ^*}\left( {E \cap {A^c}} \right)
+		\label{eq4.19}
+		\end{equation}
+		assume that ${\pi ^*}\left( E \right) < \infty$, given $\varepsilon ,\exists \left\{ {{E_i}} \right\},E,\;such\;\;that\;{E_i} \in a,E \subseteq \bigcup\limits_{i \geqslant 1} {{E_i}} $, then
+		\begin{equation}
+		{\pi ^*}\left( E \right) \leqslant \sum\limits_{i \geqslant 1} {\nu \left( {{E_i}} \right)}  \leqslant {\pi ^*}\left( E \right) + \varepsilon 
+		\label{eq4.20}
+		\end{equation}
+		${E_i} \cap A \in a,E \cap A \subseteq \bigcup\limits_{i \geqslant 1} {\left( {{E_i}\bigcap A } \right)} $, so
+		\begin{equation}
+		\begin{split}
+		{\pi ^*}\left( {{E} \cap A} \right) & \leqslant \sum\limits_{i \geqslant 1} {\nu \left( {{E_i}\bigcap A } \right)} \\
+		{\pi ^*}\left( {{E} \cap {A^c}} \right) & \leqslant \sum\limits_{i \geqslant 1} {\nu \left( {{E_i}\bigcap {{A^c}} } \right)} 
+		\end{split}
+		\label{eq4.21}
+		\end{equation}
+		so 
+		\begin{equation}
+		{\pi ^*}\left( {E \cap A} \right) + {\pi ^*}\left( {E \cap {A^c}} \right) \leqslant \sum\limits_{i \geqslant 1} {\nu \left( {{E_i}\bigcap A } \right)}  + \sum\limits_{i \geqslant 1} {\nu \left( {{E_i}\bigcap {{A^c}} } \right)} \le \sum\limits_{i \geqslant 1} {\nu \left( {{E_i}} \right)}  \leqslant \pi^{*}\left( E \right) + \varepsilon 
+		\label{eq4.22}
+		\end{equation}
+		\item $ \mathcal{M} $ is $ \sigma $-algebra.
+		
+		We need to show that
+		\begin{enumerate}
+			\item $ \Omega \in \mathcal{M} $
+			
+			It is clearly that:
+			\begin{equation}
+			{\pi ^*}\left( E \right) = {\pi ^*}\left( {E \cap \Omega } \right) + {\pi ^*}\left( {E \cap {\Omega ^c}} \right)
+			\label{eq4.23}
+			\end{equation}
+			\item $ A \in \mathcal{M} \Rightarrow A^{c} \in \mathcal{M} $
+			\begin{equation}
+			\because {\pi ^*}\left( E \right) = {\pi ^*}\left( {E \cap A} \right) + {\pi ^*}\left( {E \cap {A^c}} \right)
+			\label{eq4.24}
+			\end{equation}
+			\item ${A_i} \in \mathcal{M} \Rightarrow \bigcup\limits_{i \geqslant 1} {{A_i}}  \subseteq \mathcal{M}$
+			
+			Finite union is closed: $ A,B \in \mathcal{F} \Rightarrow A\bigcup {B \in M}. $ Let's take $E \subseteq \Omega $. We will proof that
+			\begin{equation}
+			{\pi ^*}\left( E \right) \geqslant {\pi ^*}\left( {E \cap \left( {A\bigcup B } \right)} \right) + {\pi ^*}\left( {E \cap {{\left( {A\bigcup B } \right)}^c}} \right)
+			\label{eq4.25}
+			\end{equation}
+			$\because A \in \mathcal{M}$,
+			\begin{equation}
+			\therefore \;\;{\pi ^*}\left( E \right) = {\pi ^*}\left( {E\bigcap A } \right) + {\pi ^*}\left( {E\bigcap {{A^C}} } \right)
+			\label{eq4.26}
+			\end{equation}
+			$\because B \in \mathcal{M}$
+			\begin{equation}
+			\begin{split}
+			\therefore \;\;{\pi ^*}\left( {E\backslash A} \right) & = {\pi ^*}\left( {E\backslash A \cap B} \right) + {\pi ^*}\left( {E\backslash A \cap {B^c}} \right) \\
+																& = {\pi ^*}\left( {E\backslash A \cap B} \right) + {\pi ^*}\left( {E\backslash \left( {A\bigcup B } \right)} \right)
+			\end{split}
+			\label{eq4.27}
+			\end{equation}
+			then 
+			\begin{equation}
+			{\pi ^*}\left( E \right) = {\pi ^*}\left( {E \cap A} \right) + {\pi ^*}\left( {E\backslash A \cap B} \right) + {\pi ^*}\left( {E\backslash \left( {A \cup B} \right)} \right)
+			\label{eq4.28}
+			\end{equation}
+			We want to show
+			\begin{equation}
+			{\pi ^*}\left( {E \cap A} \right) + {\pi ^*}\left( {E\backslash A \cap B} \right) \geqslant {\pi ^*}\left( {E \cap \left( {A \cup B} \right)} \right)
+			\label{eq4.29}
+			\end{equation}
+			By ${\pi ^*}$ is subadditive, we only to show that 
+			\begin{equation}
+			E \cap \left( {A \cup B} \right) \subseteq \left( {E \cap A} \right) \cup \left( {E\backslash A \cap B} \right)
+			\label{eq4.30}
+			\end{equation}
+			this is because
+			\begin{equation}
+			E \cap \left( {A \cup B} \right) = \underbrace {\left\{ {\left[ {E \cap \left( {A \cup B} \right)} \right] \cap A} \right\}}_{ \subseteq E \cap A}\bigcup {\underbrace {\left\{ {\left[ {E \cap \left( {A \cup B} \right)} \right] \cap {A^c}} \right\}}_{ \subseteq \left( {E \cap {A^c}} \right) \cap B = \left( {E\backslash A} \right)\bigcap B }} 
+			\label{eq4.31}
+			\end{equation}
+			Then Eq \ref{eq4.25} holds. So $ \mathcal{M} $ is closed by finite(countable) union.
+			
+			Now, we will show that countable infinite union is also closed. ${A_i} \in \mathcal{M}$, we want to show $A = \bigcup\limits_{j \geqslant 1} {{A_j}}  \in \mathcal{M}$, take $E \subseteq \Omega $,
+			\begin{equation}
+			{\pi ^*}\left( E \right) \geqslant {\pi ^*}\left( {E \cap A} \right) + {\pi ^*}\left( {E \cap {A^c}} \right)
+			\label{eq4.32}
+			\end{equation}
+			by Eq. \ref{eq4.25}, $ \forall \ n $ we know that
+			\begin{equation}
+			\begin{split}
+			{\pi ^*}\left( E \right) & = {\pi ^*}\left( {E \cap \left( {\bigcup\limits_{j = 1}^n {{A_j}} } \right)} \right) + {\pi ^*}\left( {E \cap \left( {\bigcup\limits_{j = 1}^n {A_{_j}^c} } \right)} \right)\\
+			& \ge {\pi ^*}\left( {E \cap \left( {\bigcup\limits_{j = 1}^n {{A_j}} } \right)} \right) + {\pi ^*}\left( {E\backslash A} \right)
+			\end{split}
+			\label{eq4.33}
+			\end{equation}
+			$ \ge $ holds in Eq \ref{eq4.33} because $\left( {E\backslash A} \right) \subseteq \left( {E\backslash \left( {\bigcup\limits_{j = 1}^n {{A_j}} } \right)} \right)$.
+			
+			Now, we define
+			\begin{equation}
+			\begin{split}
+			{F_1} & = {A_1}\\
+			{F_2} & = {A_1}\backslash {A_2}\\
+			{F_3} & = {A_1}\backslash \left( {{A_2} \cup {A_3}} \right)\\
+			      & \quad \vdots \\
+			{F_n} & = {A_1}\backslash \left( {{A_2} \cup  \cdots  \cup {A_{n - 1}}} \right)\\
+				  & \quad  \vdots 
+			\end{split}
+			\label{eq4.34}
+			\end{equation}
+			It is clear that
+			\begin{equation}
+			\bigcup\limits_{i = 1}^n {{A_i}}  = \bigcup\limits_{j = 1}^n {{F_j}} 
+			\label{eq4.35}
+			\end{equation}
+			where ${F_j} \cap {F_k} = \emptyset ,{F_j} \in \mathcal{M}$.
+			
+			Then Eq \ref{eq4.33} can be written as
+			\begin{equation}
+			{\pi ^*}\left( E \right) \geqslant {\pi ^*}\left( {E \cap \sum\limits_{j = 1}^n {{F_j}} } \right) + {\pi ^*}\left( {E\backslash A} \right)
+			\label{eq4.36}
+			\end{equation}
+			By Remark \ref{rmk4.2}, we have 
+				\begin{equation}
+				\begin{split}
+				{\pi ^*}\left( E \right) & \geqslant {\pi ^*}\left( {E \cap \left( {\sum\limits_{j = 1}^n {{F_j}} } \right)} \right) + {\pi ^*}\left( {E\backslash A} \right)\\
+										 & = \sum\limits_{j = 1}^n {{\pi ^*}\left( {E \cap {F_j}} \right)}  + {\pi ^*}\left( {E\backslash A} \right)
+				\end{split}
+				\label{eq4.37}
+				\end{equation}
+				$\because \;n$ is any number in Remark \ref{rmk4.2} , $\therefore {\pi ^*}\left( {E \cap \sum\limits_{j = 1}^\infty  {{F_j}} } \right) = \sum\limits_{j = 1}^\infty  {{\pi ^*}\left( {E \cap {F_j}} \right)} $, by  $ {\pi ^*} $ is  subadditive
+				\begin{equation}
+				\begin{split}
+				{\pi ^*}\left( E \right) & \geqslant {\pi ^*}\left( {E \cap \sum\limits_j {{F_j}} } \right) + {\pi ^*}\left( {E\backslash A} \right)\\
+										 &  = \sum\limits_{j \geqslant 1} {{\pi ^*}\left( {E \cap {F_j}} \right)}  + {\pi ^*}\left( {E\backslash A} \right)\\
+										 & \geqslant {\pi ^*}\left( {\bigcup\limits_{j \geqslant 1} {\left( {E \cap {F_j}} \right)} } \right) + {\pi ^*}\left( {E\backslash A} \right)\\
+										 & =  \geqslant {\pi ^*}\left( {E \cap \left( {\bigcup\limits_{j \geqslant 1} {{F_j}} } \right)} \right) + {\pi ^*}\left( {E\backslash A} \right)\\
+									   	 &  = {\pi ^*}\left( {E \cap A} \right) + {\pi ^*}\left( {E\backslash A} \right)
+				\end{split}
+				\label{eq4.38}
+				\end{equation}
+		\end{enumerate}
+	So $ \mathcal{M} $ is a $ \sigma- $algebra.
+	\end{enumerate}
+\end{proof}
+
+\begin{remark}
+	$ \forall n, $ we have that
+	\begin{equation}
+	{\pi ^*}\left( {E \cap \sum\limits_{j = 1}^n {{F_j}} } \right) = \sum\limits_{j = 1}^n {{\pi ^*}\left( {E \cap {F_j}} \right)} 
+	\label{eq4.39}
+	\end{equation}
+	where ${F_j}$ defined as Eq \ref{eq4.34}.
+	\label{rmk4.2}
+\end{remark}
+
+\begin{proof}
+	By induction
+	\begin{enumerate}
+		\item $ n = 1, $ Eq \ref{eq4.39} holds
+		\item Support $ n $ holds then we will proof $  n + 1  $ holds.
+	 ${F_k} \in \mathcal{M},{F_{n + 1}} \in \mathcal{M}$, we have that
+	 \begin{equation}
+	 \begin{split}
+	 {\pi ^*}\left( {E \cap \sum\limits_{j = 1}^{n + 1} {{F_j}} } \right) & = {\pi ^*}\left( {\left( {E \cap \sum\limits_{j = 1}^{n + 1} {{F_j}} } \right) \cap {F_{n + 1}}} \right) + {\pi ^*}\left( {\left( {E \cap \sum\limits_{j = 1}^{n + 1} {{F_j}} } \right) \cap F_{_{n + 1}}^c} \right)\\
+	                                                                      & = {\pi ^*}\left( {E \cap {F_{n + 1}}} \right) + \underbrace {{\pi ^*}\left( {E \cap \sum\limits_{j = 1}^n {{F_j}} } \right)}_{by\;\;assumption\;\;\; = \sum\limits_{j = 1}^n {{\pi ^*}\left( {E \cap {F_j}} \right)} }\\
+	                                                                      & = \sum\limits_{j = 1}^{n + 1} {{\pi ^*}\left( {E \cap {F_j}} \right)} 
+	 \end{split}
+	 \label{eq4.40}
+	 \end{equation}
+	\end{enumerate}
+\end{proof}
+
+By Thm \ref{thm4.2} we have that $ \mathcal{M} \supseteq \mathcal{F}(a). $
+
+{\large Step 3}
+
+\begin{theorem}
+	${\pi ^*}:\mathcal{M} \to {\mathbb{R}_ + } \cup \left\{ { + \infty } \right\}$ is $ \sigma- $ additive, then 
+	\begin{equation}
+	{\pi ^*}\left( A \right) = \nu \left( A \right),\;\;\forall A \in a
+	\label{eq4.41}
+	\end{equation}
+	\label{thm4.3}
+\end{theorem}
+
+\begin{remark}
+	Eq \ref{eq4.41} is also
+	\begin{equation}
+	{\pi ^*}{|_a} = v
+	\label{eq4.42}
+	\end{equation}
+	Eq \ref{def4.2} holds because Thm \ref{thm4.2}, $ a \in \mathcal{M}. $
+	\label{rmk4.3}
+\end{remark}
+
+\begin{proof}(Thm \ref{thm4.3})
+	\begin{enumerate}
+		\item ${\pi ^*}\left( A \right) = \nu \left( A \right),\;\forall A \in a$
+		\begin{enumerate}
+			\item check ${\pi ^*}\left( A \right) \leqslant \nu \left( A \right)$
+			
+			Let's $\underbrace A_{{E_1}},\underbrace \emptyset _{{E_2}},\underbrace \emptyset _{{E_3}},\underbrace  \cdots _{{E_j}}$
+			\begin{equation}
+			{\pi ^*}\left( A \right) = \mathop {\inf }\limits_{\left\{ {{E_i}} \right\},A} \sum\limits_i {\nu \left( {{E_i}} \right)}  \leqslant \sum\limits_i {\nu \left( {{E_i}} \right)}  = \nu \left( A \right)
+			\label{eq4.43}
+			\end{equation}
+			\item check ${\pi ^*}\left( A \right) \geqslant \nu \left( A \right)$
+			
+			Let's take
+			\begin{equation}
+			\begin{split}
+			{F_1} & = {E_1}\\
+			{F_2} & = {E_2}\backslash {E_1}\\
+			{F_3} & = {E_3}\backslash \left( {{E_1} \cup {E_2}} \right)\\
+			      & \vdots \\
+			{F_n} & = {E_n}\backslash \left( {{E_1} \cup {E_2} \cup  \cdots  \cup {E_{n - 1}}} \right)\\
+			      & \vdots
+			\end{split}
+			\label{eq4.44}
+			\end{equation}
+			${F_j} \in a,\bigcup\limits_j {{F_j}}  = \bigcup\limits_j {{E_j}} ,{F_j} \cap {F_k} = \emptyset ,A \subseteq \bigcup\limits_{j \geqslant 1} {{F_j}} $, so $A = \sum\limits_j {{F_j} \cap A \in a} $. 
+			
+			Because $ \nu $  is $ \sigma- $additive we have that
+			\begin{equation}
+			\nu \left( A \right) = \sum\limits_{j \geqslant 1} {\nu \left( {{F_j} \cap A} \right)} 
+			\label{eq4.45}
+			\end{equation}
+			
+			$\because {F_j} \subseteq {E_j}$
+			\begin{equation}
+			\nu \left( A \right) = \sum\limits_{j \geqslant 1} {\nu \left( {{F_j} \cap A} \right)}  \leqslant \sum\limits_{j \geqslant 1} {\nu \left( {{E_j}} \right)} 
+			\label{eq4.46}
+			\end{equation}
+			so
+			\begin{equation}
+			\nu \left( A \right) \leqslant \mathop {\inf }\limits_{\left\{ {{E_i}} \right\},A} \sum\limits_{j \geqslant 1} {\nu \left( {{E_j}} \right)}  = {\pi ^*}\left( A \right)
+			\label{eq4.47}
+			\end{equation}
+		\end{enumerate}
+	    Then, we can get
+	    \begin{equation}
+	    {\pi ^*}\left( A \right) = \nu \left( A \right),\;\forall A \in a
+	    \label{eq4.48}
+	    \end{equation}
+		\item ${\pi ^*}{|_\mathcal{M}}$ is $ \sigma- $additive
+		
+		Suppose that $ A_{j} \in \mathcal{M}, {A_j} \cap {A_k} = \emptyset, $ we want to proof that
+		\begin{equation}
+		{\pi ^*}\left( {\sum {{A_j}} } \right) = \sum\limits_{j \geqslant 1} {{\pi ^*}\left( {{A_j}} \right)} 
+		\label{eq4.49}
+		\end{equation}
+		\begin{enumerate}
+			\item check ${\pi ^*}\left( {\sum {{A_j}} } \right) \leqslant \sum\limits_{j \geqslant 1} {{\pi ^*}\left( {{A_j}} \right)} $
+			by ${\pi ^*}$ is an outer measure, ${\pi ^*}$ is subadditive
+			\item check ${\pi ^*}\left( {\sum {{A_j}} } \right) \geqslant \sum\limits_{j \geqslant 1} {{\pi ^*}\left( {{A_j}} \right)} $
+			
+			by ${\pi ^*}$ is an outer measure, ${\pi ^*}$ is monotone
+			\begin{equation}
+			{\pi ^*}\left( {\sum\limits_{j \geqslant 1} {{A_j}} } \right) \geqslant {\pi ^*}\left( {\sum\limits_{j = 1}^n {{A_j}} } \right)
+			\label{eq4.50}
+			\end{equation}
+			by Remark \ref{rmk4.2}, we have that
+			\begin{equation}
+			{\pi ^*}\left( {\sum\limits_{j = 1}^n {{A_j}} } \right) = \sum\limits_{j = 1}^n {{\pi ^*}\left( {{A_j}} \right)}, \ \ \forall n
+			\label{eq4.51}
+			\end{equation}
+			so 
+			\begin{equation}
+			{\pi ^*}\left( {\sum\limits_{j \geqslant 1} {{A_j}} } \right) \geqslant \sum\limits_{j \geqslant 1} {{\pi ^*}\left( {{A_j}} \right)} 
+			\label{eq4.52}
+			\end{equation}
+		\end{enumerate}
+	\end{enumerate}
+\end{proof}
+
+{\large Step 4}
+
+\begin{definition}
+	$\Omega $ is $ \sigma $-finite$ (\mu_{1}) $  if ${E_j} \uparrow \Omega ,{\mu _1}\left( {{E_j}} \right) < \infty ,\;\;\forall j,\;{E_j} \in a$.
+	\label{def4.4}
+\end{definition}
+
+\begin{theorem}[Uniqueness]
+	Suppose that ${\mu _1},{\mu _2}:\mathcal{F}\left( a \right) \to {R_ + } \cup \left\{ { + \infty } \right\},\Omega $ is $ \sigma $-finite$ (\mu_{1}) $, if ${\mu _1}{|_a} = {\mu _2}{|_a}$, then 
+	\begin{equation}
+	{\mu _1} = {\mu _2}, \ \ on\ \ \mathcal{F}(a)
+	\label{eq4.53}
+	\end{equation}
+	\label{thm4.4}
+\end{theorem}
+
+\begin{definition}
+	$ \Omega $, $ \mathcal{G} \subseteq \mathcal{P}\left(\Omega\right), \mathcal{G} $ is a monotone class if
+	\begin{enumerate}
+		\item  
+		\begin{equation}
+		{A_j} \in \mathcal{G},j \geqslant 1,{A_j} \subseteq {A_{j + 1}} \Rightarrow A = \bigcup\limits_{j \geqslant 1} {{A_j}}  = \mathop {\lim }\limits_{j \to \infty } {A_j} \in \mathcal{G}
+		\label{eq4.54}
+		\end{equation}
+		\item 
+		\begin{equation}
+		{B_j} \in \mathcal{G},j \geqslant 1,{B_j} \supseteq {B_{j + 1}} \Rightarrow B = \bigcap\limits_{j \geqslant 1} {{B_j}}  = \mathop {\lim }\limits_{j \to \infty } {B_j} \in \mathcal{G}
+		\label{eq4.55}
+		\end{equation}
+	\end{enumerate}
+	\label{def4.5}
+\end{definition}
+
+\begin{theorem}
+	${\mathcal{G}_\alpha }$ is a monotone class, $ \alpha \in I $, then the followings hold
+	\begin{enumerate}
+		\item $\bigcap\limits_{\alpha  \in I} {{\mathcal{G}_\alpha }} $ is a monotone class
+		\item $c \subseteq \mathcal{P}\left( \Omega  \right) \Rightarrow \mathcal{G}\left( c \right) = \bigcap\limits_{\alpha  \in I} {{\mathcal{G}_\alpha }} $ , i.e. monotone classes generated by class $ c $
+	\end{enumerate}
+	\label{thm4.5}
+\end{theorem}
+
+\begin{lemma}
+	$ a \subseteq \mathcal{P}\left(\Omega\right) $ is an algebra, $\mu \left( a \right)$ is monotone class generated by algebra $ a $, $ \mathcal{F}\left(a\right) $ is a $ \sigma- $algebra generated by algebra $ a $, then
+	\begin{equation}
+	\mu \left( a \right) = \mathcal{F}\left( a \right)
+	\label{eq4.56}
+	\end{equation}
+	\label{lem4.1}
+\end{lemma}
+\begin{proof}
+	It will proof in the next lecture.
+\end{proof}
+
+\begin{proof}(Thm \ref{thm4.4})
+	${\mu _1},{\mu _2}:\mathcal{F}\left( a \right) \to {\mathbb{R}_ + } \cup \left\{ { + \infty } \right\}$, ${\mu _1}\left( A \right) = {\mu _2}\left( A \right),\forall A \in a$, $\Omega \;\sigma $-finite, $\Omega  = \bigcup\limits_{j \geqslant 1} {{E_j}} ,{E_j} \in a,{\mu _j}\left( {{E_j}} \right) < \infty $, then ${\mu _1} = {\mu _2}$ on $ \mathcal{F}(a). $
+	
+	Fix ${E_n}$, we denote that
+	\begin{equation}
+	{\mathcal{B}_n} = \left\{ {E \in \mathcal{F}\left( a \right),{\mu _1}\left( {E \cap {E_n}} \right) = {\mu _2}\left( {E \cap {E_n}} \right)} \right\}
+	\label{eq4.57}
+	\end{equation}
+	We claim that
+	\begin{enumerate}
+		\item $ {\mathcal{B}_n} \supseteq a $
+		\item $ {\mathcal{B}_n} $ is a monotone class 
+	\end{enumerate}
+    We proof $ {\mathcal{B}_n} $ is a monotone class.
+   \begin{enumerate}
+   	\item $\forall {A_j} \in {\mathcal{B}_n},{A_j} \uparrow A = \bigcup\limits_{j \geqslant 1} {{A_j}} $, then 
+   	\begin{equation}
+   	{\mu _1}\left( {{A_j} \cap {E_n}} \right) = {\mu _2}\left( {{A_j} \cap {E_n}} \right)
+   	\label{eq4.58}
+   	\end{equation}
+   	By Remark \ref{lem3.1}
+   	\begin{equation}
+   	{\mu _1}\left( {{A_j} \cap {E_n}} \right) \to {\mu _1}\left( {A \cap {E_n}} \right),{\mu _2}\left( {{A_j} \cap {E_n}} \right) \to {\mu _2}\left( {A \cap {E_n}} \right)
+   	\label{eq4.59}
+   	\end{equation}
+   	\item $\forall {B_j} \in {\mathcal{B}_n},{B_j} \downarrow B = \bigcap\limits_{j \geqslant 1} {{B_j}} $, then 
+   	\begin{equation}
+   	{\mu _1}\left( {{B_j} \cap {E_n}} \right) = {\mu _2}\left( {{B_j} \cap {E_n}} \right)
+   	\label{eq4.60}
+   	\end{equation}
+   	By Remark \ref{lem3.1}
+   	\begin{equation}
+   	{\mu _1}\left( {{B_j} \cap {E_n}} \right) \to {\mu _1}\left( {B \cap {E_n}} \right),{\mu _2}\left( {{B_j} \cap {E_n}} \right) \to {\mu _2}\left( {B \cap {E_n}} \right)
+   	\label{eq4.61}
+   	\end{equation}
+   \end{enumerate} 
+   So we can get that 
+   \begin{equation}
+    {\mathcal{B}_n} \supseteq \mathcal{M}\left( a \right)
+    \label{eq4.62}
+   \end{equation}
+   where 
+   $ \mathcal{M}\left( a \right) $ is a monotone class generated by $ a $. Then by Lemma \ref{lem4.1} 
+   \begin{equation}
+   \mathcal{M}\left( a \right) = \mathcal{F}\left( a \right)
+   \label{eq4.63}
+   \end{equation}
+   And by Eq \ref{eq4.57},
+   \begin{equation}
+   {\mathcal{B}_n}\left( a \right) \subseteq \mathcal{F}\left( a \right)
+   \label{eq4.64}
+   \end{equation}
+   so
+   \begin{equation}
+   {\mathcal{B}_n}\left( a \right) = \mathcal{F}\left( a \right)
+   \label{eq4.65}
+   \end{equation}
+   Finally, 
+   ${\mu _1}\left( A \right) = {\mu _2}\left( A \right),\forall A \in \mathcal{F}\left( a \right)$, by $ {\mathcal{B}_n} =  \mathcal{F}(a),  $  then  $ A \in {\mathcal{B}_n}$. ${B_j} \uparrow \Omega $, apply Lemma \ref{lem3.1} again, we have 
+   \begin{equation}
+   {\mu _1}\left( A \right) = {\mu _2}\left( A \right)
+   \end{equation}
+\end{proof}
