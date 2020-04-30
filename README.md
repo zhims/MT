@@ -1,6 +1,6 @@
 Measure Theory 
 
-The videos can be found https://pan.baidu.com/s/1SmAfZSFVX6xCZs16MRPbiA, password: l0jm.
+The videos can be found https://pan.baidu.com/s/1SmAfZSFVX6xCZs16MRPbiA, password: l0jm, (lowercase l, number 0, lowercase j, lowercase m )
 
 These lectures are mainly based on the books Introduction to measure and integration by S. Taylor published by Cambridge University Press.
 
