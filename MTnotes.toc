@@ -7,4 +7,4 @@
 \contentsline {section}{7 Lecture 7}{28}{section*.18}
 \contentsline {section}{8 Lecture 8}{31}{section*.20}
 \contentsline {section}{9 Lecture 9}{34}{section*.22}
-\contentsline {section}{10 Lecture 10}{35}{section*.24}
+\contentsline {section}{10 Lecture 10}{38}{section*.24}
