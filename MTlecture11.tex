@@ -4,4 +4,99 @@
 	\Large \bf Measurable Functions
 \end{center}
 \vspace{0.25cm}
- 
+
+We now assume given $\left( {\Omega ,\mathcal{F},\mu } \right)$, where $ \Omega $ is a space, $ \mathcal{F} $ a $ \sigma $-field of subsets of $ \Omega $ and $ \mu $ a measure on $ \mathcal{F} $.
+
+ \begin{lemma}
+ 	If $ f $ and $ g $ are measurable functions: $\Omega  \to \overline {\mathbb{R}} $, and $ \alpha \in \mathbb{R} $, then
+ 	\begin{enumerate}
+ 		\item $ \alpha f \in \mathcal{F} $-measurable
+ 		\item $ \alpha + f  $ $\in \mathcal{F} $-measurable
+ 		\item $ f + g \in \mathcal{F} $-measurable
+ 		\item $f^{2} \in \mathcal{F} $-measurable
+ 		\item ${1 \mathord{\left/
+ 				{\vphantom {1 f}} \right.
+ 				\kern-\nulldelimiterspace} f}\in \mathcal{F} $-measurable
+ 		\item $ f^{+},f^{-} $, $\left| f \right| \in \mathcal{F} $-measurable
+ 		\item $ fg \in \mathcal{F} $-measurable
+ 	\end{enumerate}
+ \label{lma11.1}
+ \end{lemma}
+\begin{proof}
+	\text{}
+	\begin{enumerate}
+		\item $ \alpha f \in \mathcal{F} $-measurable, we want to show that $\left\{ {\omega :\alpha f\left( \omega  \right) \leqslant x} \right\} \in \mathcal{F}$
+		\begin{enumerate}
+			\item $ \alpha = 0 $
+			\item $ \alpha > 0 $, $\alpha f\left( \omega  \right) \leqslant x,\;i.e.\;f\left( \omega  \right) \leqslant {\raise0.7ex\hbox{$x$} \!\mathord{\left/
+					{\vphantom {x \alpha }}\right.\kern-\nulldelimiterspace}
+				\!\lower0.7ex\hbox{$\alpha $}}\;by\;\left\{ {\omega :\;f\left( \omega  \right) \leqslant {\raise0.7ex\hbox{$x$} \!\mathord{\left/
+						{\vphantom {x \alpha }}\right.\kern-\nulldelimiterspace}
+					\!\lower0.7ex\hbox{$\alpha $}}} \right\} \in \;\mathcal{F},\;\forall \ {\raise0.7ex\hbox{$x$} \!\mathord{\left/
+					{\vphantom {x \alpha }}\right.\kern-\nulldelimiterspace}
+				\!\lower0.7ex\hbox{$\alpha $}} \in \mathbb{R}$
+			\item $ \alpha < 0 $,  $\alpha f\left( \omega  \right) \leqslant x,\;i.e.\;f\left( \omega  \right) \geqslant {\raise0.7ex\hbox{$x$} \!\mathord{\left/
+					{\vphantom {x \alpha }}\right.\kern-\nulldelimiterspace}
+				\!\lower0.7ex\hbox{$\alpha $}}\;\;$ then by lemma \ref{lma10.1}. 
+		\end{enumerate}
+		\item 
+		\item  we want to show $f + g\; \in \mathcal{F}$-measurable, i.e. $\left\{ {\omega :f\left( \omega  \right) + g\left( \omega  \right) < x} \right\} \in \mathcal{F},\;\forall x \in \mathbb{R}$
+		
+		\begin{equation}
+		\left\{ {\omega :f\left( \omega  \right) + g\left( \omega  \right) < x} \right\} = \bigcup\limits_{r \in \mathbb{Q}} {\left( {\left\{ {\omega :f\left( \omega  \right) < r} \right\} \cap \left\{ {g\left( \omega  \right) < x - r} \right\}} \right)} 
+		\label{eq11.1}
+		\end{equation}
+		
+		by Lemma \ref{lma10.1}, and $ \mathcal{F} $ is a $ \sigma $-algebra, so $\left\{ {\omega :f\left( \omega  \right) + g\left( \omega  \right) < x} \right\} \in \mathcal{F}$
+		\item $ f^{2} \in \mathcal{F} $-measurable
+		
+		Now, we will check $\left\{ {\omega :f{{\left( \omega  \right)}^2} < x} \right\} \in \mathcal{F}$
+		
+		\begin{equation}
+		\left\{ {\omega :f{{\left( \omega  \right)}^2} < x} \right\} = \left\{ {\begin{matrix}
+			{\emptyset  \in \mathcal{F}}  \\ 
+			{\left\{ {\omega  \in \Omega , - x < f\left( \omega  \right) < x} \right\} \in \mathcal{F}}  \\ 
+			
+			\end{matrix} } \right.\;\;\;\begin{matrix}
+		{x \leqslant 0}  \\ 
+		{x > 0}  \\ 
+		
+		\end{matrix} 
+		\label{eq11.2}
+		\end{equation}
+		\item $\frac{1}{f} \in \mathcal{F}$-measurable i.e. $\left\{ {\omega  \in \Omega :\frac{1}{{f\left( \omega  \right)}} < x} \right\} \in \mathcal{F}$
+		
+		by 
+		\begin{enumerate}
+			\item $ x > 0 $, $\left\{ {\omega :f\left( \omega  \right) < 0} \right\} \cup \left\{ {\omega :f\left( \omega  \right) > \frac{1}{x}} \right\} \in \mathcal{F}$
+			\item $ x = 0 $, $\left\{ {\omega :f\left( \omega  \right) < 0} \right\} \in \mathcal{F}$
+			\item $ x < 0 $, $\left\{ {\omega :\frac{1}{x} < f\left( \omega  \right) < 0} \right\} \in \mathcal{F}$
+		\end{enumerate}
+		\item ${f^ + } = \max \left\{ {f,0} \right\}$
+		\begin{equation}
+		\left\{ {\omega  \in \Omega :{f^ + }\left( \omega  \right) < x} \right\} = \left\{ {\begin{matrix}
+			{\emptyset  \in \mathcal{F}}  \\ 
+			{\left\{ {\omega  \in \Omega :f\left( \omega  \right) < x} \right\} \in \mathcal{F}}  \\ 
+			
+			\end{matrix} } \right.\;\;\;\begin{matrix}
+		{x \leqslant 0}  \\ 
+		{x > 0}  \\ 
+		
+		\end{matrix} 
+		\label{eq11.3}
+		\end{equation}
+		
+		${f^ - } = \max \left( { - f,0} \right)$ and $\left| f \right| = {f^ + } + {f^ - }$
+		\item by $fg = \frac{1}{2}\left( {{{\left( {f + g} \right)}^2} - {f^2} - {g^2}} \right)$
+	\end{enumerate}
+\end{proof}
+
+\begin{remark}
+	\begin{equation}
+	\begin{split}
+	\max \left( {f,g} \right) & = \frac{1}{2}\left[ {f + g + \left| {f - g} \right|} \right]\\
+	\min \left( {f,g} \right) & = f + g - \max \left( {f,g} \right)
+	\end{split}
+	\label{eq11.4}
+	\end{equation}
+\end{remark}
