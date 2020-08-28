@@ -8,4 +8,3 @@ Thank you to all of my friends  who will send me suggestions and corrections. My
 
 I would like to especially thank the IMPA and Professor Landim  who put their courses in website.
 
-These videos can be found: https://www.youtube.com/playlist?list=PLo4jXE-LdDTQq8ZyA8F8reSQHej3F6RFX.
