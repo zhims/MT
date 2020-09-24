@@ -9,4 +9,4 @@ Thank you to all of my friends  who will send me suggestions and corrections. My
 I would like to especially thank the IMPA and Professor Landim  who put their courses in website.
 
 
-4</sub e>7
+<sup>上标</sup> 测试<sub>下标</sub>
